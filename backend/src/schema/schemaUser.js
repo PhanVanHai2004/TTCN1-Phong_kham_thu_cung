@@ -1,7 +1,7 @@
 export const UserSchema = {
     body:{
         type:'object',
-        required:['name','email','password','address','role','birth_date'],
+        required:['name','email','password','address'],
         properties:{
             name:{type:'string',minLength:2,maxLength:20},
             email:{type:'string',format:'email'},

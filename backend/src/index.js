@@ -17,7 +17,8 @@ fastify.register(mysql,{
 })
 
 await fastify.register(cors, {
-  origin: "http://localhost:5174", // địa chỉ React (Vite)
+  origin: "http://localhost:5174", 
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 });
 fastify.get('/',async (req,reply) => {
     return {mes:'xin chao'}
