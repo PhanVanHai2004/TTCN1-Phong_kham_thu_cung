@@ -61,8 +61,8 @@ function App() {
   return (
     <div style={{ padding: "20px" }}>
       <h1>Danh sách người dùng</h1>
-      <div style={{ marginBottom: "20px" }}>
-        <input
+      <div style={{ marginBottom: "20px", display:"grid"}}>
+        <input 
           type="text"
           placeholder="Tên"
           value={name}
