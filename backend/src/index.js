@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import cors from "@fastify/cors"
 import mysql from '@fastify/mysql'
 import controllerUser from './controller/controllerUser.js'
 
@@ -15,13 +16,16 @@ fastify.register(mysql,{
 
 })
 
+await fastify.register(cors, {
+  origin: "http://localhost:5174", // địa chỉ React (Vite)
+});
 fastify.get('/',async (req,reply) => {
     return {mes:'xin chao'}
 })
 fastify.register(controllerUser)
 
 try {
-    await fastify.listen({port:3000})
+    await fastify.listen({port:3000})   
 } catch (error) {
     fastify.log.error(error)
 }

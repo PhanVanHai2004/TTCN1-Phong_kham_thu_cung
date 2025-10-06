@@ -7,3 +7,7 @@
             [user.name,user.email,user.password,birth_date,user.address,role]   
         )
     }
+    export const getAllUser = async (fastify) => {
+        const [row] = await  fastify.mysql.execute(`SELECT * FROM users `)
+        return row
+    }

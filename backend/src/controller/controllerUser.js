@@ -1,4 +1,4 @@
-import { addUser } from "../model/modelUser.js"
+import { addUser,getAllUser } from "../model/modelUser.js"
 import { UserSchema } from "../schema/schemaUser.js"
 
 
@@ -17,6 +17,10 @@ const controllerUser = async (fastify,options)=>{
       });
             
         }
+    })
+    fastify.get('/getUser',async (req,reply) => {
+        const row = await getAllUser(fastify)
+        return row
     })
 }
 export default controllerUser
